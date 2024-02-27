@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import "./auth.css";
 import * as api from '../../api/userApi';
 import { register, login } from '../../actions/authActions'; 
+import { useNavigate } from 'react-router-dom';
 
 export default function Auth(props) {
   const dispatch = useDispatch(); 
@@ -11,6 +12,7 @@ export default function Auth(props) {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
   const rolesEnum = ['Administrator', 'Energy Manager', 'Operator'];
+  const navigateTo = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault(); 
@@ -21,8 +23,9 @@ export default function Auth(props) {
         console.log("User created successfully");
       } else {
        
-        await dispatch(login({ username, password }));
+        await dispatch(login({ username, password, navigateTo }));
         console.log("user signed in");
+        
       }
     } catch (error) {
       console.error("Error:", error);

@@ -9,10 +9,12 @@ export const register = ({ username, password, role }) => async (dispatch) => {
   }
 };
 
-export const login = ({ username, password }) => async (dispatch) => {
+export const login = ({ username, password, navigateTo}) => async (dispatch) => {
   try {
     const data = await api.loginUser({ username, password });
     dispatch({ type: 'LOGIN_SUCCESS', payload: data });
+    navigateTo('/home')
+    
   } catch (error) {
     dispatch({ type: 'LOGIN_FAILURE', payload: error });
   }

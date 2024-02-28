@@ -15,15 +15,14 @@ import ResetPassword from "./examples/ResetPassword";
 import Lock from "./examples/Lock";
 import NotFoundPage from "./examples/NotFound";
 import ServerError from "./examples/ServerError";
-
-
+import Cost from '../components/Cost';
+import Production from '../components/Production';
 
 // components
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Preloader from "../components/Preloader";
-
 
 const RouteWithLoader = ({ component: Component, ...rest }) => {
   const [loaded, setLoaded] = useState(false);
@@ -85,8 +84,8 @@ export default () => (
     {/* pages */}
     <RouteWithSidebar exact path={Routes.DashboardOverview.path} component={DashboardOverview} />
     <RouteWithSidebar exact path={Routes.Settings.path} component={Settings} />
-
-
+    <RouteWithSidebar exact path={Routes.Production.path} component={Production} />
+   <RouteWithSidebar exact path={Routes.Cost.path} component={Cost} />
 
     <Redirect to={Routes.NotFound.path} />
   </Switch>

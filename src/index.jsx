@@ -10,11 +10,13 @@ import "react-datetime/css/react-datetime.css";
 
 import HomePage from "./pages/HomePage";
 import ScrollToTop from "./components/ScrollToTop";
+import Cost from './components/Cost';
 
 ReactDOM.render(
   <HashRouter>
     <ScrollToTop />
     <HomePage />
-  </HashRouter>,
+    </HashRouter>,
+ 
   document.getElementById("root")
 );

@@ -7,5 +7,9 @@ export const Routes = {
     Signup: { path: "/sign-up" },
     ForgotPassword: { path: "/forgot-password" },
     ResetPassword: { path: "/reset-password" },
+    Cost: { path: "/cost" },
+    Production: { path: "/production" },
+
     NotFound: { path: "/examples/404" },
+   
 };
